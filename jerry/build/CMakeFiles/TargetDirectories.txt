@@ -1,3 +1,0 @@
-/home/peter/Dropbox/Coding_Projects/Jerry/asd/build/CMakeFiles/jerry.dir
-/home/peter/Dropbox/Coding_Projects/Jerry/asd/build/CMakeFiles/edit_cache.dir
-/home/peter/Dropbox/Coding_Projects/Jerry/asd/build/CMakeFiles/rebuild_cache.dir

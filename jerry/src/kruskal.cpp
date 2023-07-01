@@ -48,10 +48,6 @@ struct Edge
   }
 };
 
-std::vector<Edge> add()
-{
-  return {Edge(Node(0, 0), Node(0, 1)), Edge(Node(1, 1), Node(2, 1))};
-}
 
 class UnionFind
 {
@@ -166,7 +162,6 @@ PYBIND11_MODULE(jerry, m)
 {
   m.doc() = "pybind11 example plugin"; // optional module docstring
 
-  m.def("add", &add, "A function that adds two numbers");
   m.def("rand_kruskal", [](const std::vector<Edge> &edges, const int num_nodes) -> std::vector<Edge>
         {
           std::vector<Edge> mst;

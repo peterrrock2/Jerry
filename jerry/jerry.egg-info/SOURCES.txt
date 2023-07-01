@@ -1,6 +1,0 @@
-setup.py
-jerry.egg-info/PKG-INFO
-jerry.egg-info/SOURCES.txt
-jerry.egg-info/dependency_links.txt
-jerry.egg-info/top_level.txt
-src/kruskal.cpp
