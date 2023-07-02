@@ -3,7 +3,7 @@ name: Build and Distribute Wheel
 on:
   push:
     branches:
-      - master  # Adjust the branch name if necessary
+      - main  # Adjust the branch name if necessary
 
 jobs:
   build:
@@ -21,14 +21,14 @@ jobs:
     - name: Install dependencies
       run: |
         pip install cmake setuptools wheel
-        pip install pybind11
+        brew install pybind11
 
     - name: Build and package
       working-directory: ./jerry  # Set working directory to the subfolder
       run: |
         mkdir build
         cd build
-        cmake -DCMAKE_PREFIX_PATH=/usr/local/opt/pybind11 ..
+        cmake ..
         make
         cd ../..
 
