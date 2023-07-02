@@ -28,11 +28,11 @@ node_list = list(graph.nodes())
 edge_list = list(graph.edges())
 
 # The randomized kruskal method takes in two parameters: the edge list and the total number
-# of nodes it will then return a list of pairs of pairs that represent an edge list.
+# of nodes. It will then return a list of pairs of pairs that represent an edge list.
 result = jerry.rand_kruskal(edge_list, len(node_list))
 
 G = nx.from_edgelist(result)
 ```
-And should you choose to visualize this, you will get something like
+And, should you choose to visualize this, you will get something like
 
 ![alt text](./docs/example_run.png "Example Run Randomized Kruskal")
