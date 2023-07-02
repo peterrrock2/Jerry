@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: 3.X # Add or remove Python versions as needed
+        python-version: '3.x' # Add or remove Python versions as needed
 
     steps:
     - name: Checkout code
