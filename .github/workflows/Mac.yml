@@ -1,4 +1,4 @@
-name: Build and Distribute Wheels
+name: Build and Distribute Wheel
 
 on:
   push:
@@ -9,18 +9,14 @@ jobs:
   build:
     runs-on: macos-latest  # Use macOS runner
 
-    strategy:
-      matrix:
-        python-version: '3.x' # Add or remove Python versions as needed
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: '3.x'
 
     - name: Install dependencies
       run: |
@@ -43,5 +39,5 @@ jobs:
     - name: Publish artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: wheel-py${{ matrix.python-version }}
+        name: wheel-py3.10
         path: ./jerry/dist/*.whl
