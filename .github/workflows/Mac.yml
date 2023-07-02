@@ -34,7 +34,7 @@ jobs:
 
     - name: Build wheel
       working-directory: ./jerry  # Set working directory to the subfolder
-      run: python setup.py bdist_wheel
+      run: python mac_setup.py bdist_wheel
 
     - name: Publish artifacts
       uses: actions/upload-artifact@v2
