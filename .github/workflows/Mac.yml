@@ -1,4 +1,4 @@
-name: Build and Distribute Wheel
+name: Build and Distribute Wheels
 
 on:
   push:
@@ -9,14 +9,18 @@ jobs:
   build:
     runs-on: macos-latest  # Use macOS runner
 
+    strategy:
+      matrix:
+        python-version: [3.7, 3.8, 3.9]  # Add or remove Python versions as needed
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Python
+    - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
-        python-version: [3.7, 3.8, 3.9, 3.10, 3.11]
+        python-version: ${{ matrix.python-version }}
 
     - name: Install dependencies
       run: pip install cmake setuptools wheel
@@ -32,11 +36,10 @@ jobs:
 
     - name: Build wheel
       working-directory: ./jerry  # Set working directory to the subfolder
-      run: python mac_setup.py bdist_wheel
+      run: python setup.py bdist_wheel
 
     - name: Publish artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: wheel
+        name: wheel-py${{ matrix.python-version }}
         path: ./jerry/dist/*.whl
-
