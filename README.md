@@ -27,8 +27,8 @@ graph = nx.grid_graph(dim=(5,5)) # create a 5x5 grid graph
 node_list = list(graph.nodes())
 edge_list = list(graph.edges())
 
-# The randomized kruskal method takes in two parameters: the edge list and the total number of nodes
-# it will then return a list of pairs of pairs that represent an edge list.
+# The randomized kruskal method takes in two parameters: the edge list and the total number
+# of nodes it will then return a list of pairs of pairs that represent an edge list.
 result = jerry.rand_kruskal(edge_list, len(node_list))
 
 G = nx.from_edgelist(result)
